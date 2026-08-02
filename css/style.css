@@ -1,0 +1,450 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--md-font-body);
+  color: var(--md-text);
+  background: var(--md-bg-deep);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--md-gold);
+  outline-offset: 3px;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--md-page-bg);
+  background-image: url("../assets/bg/bg.png");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.page-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55));
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  color: var(--md-text);
+}
+
+/* Шапка 04-nav-underline */
+.md-header-under {
+  padding: 16px 0 0;
+}
+
+.md-header-under__inner {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.md-header-under__logo img {
+  display: block;
+  width: min(280px, 54vw);
+  height: auto;
+  filter: drop-shadow(0 6px 12px var(--md-shadow));
+}
+
+.md-header-under__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  width: 100%;
+  padding: 10px 0 12px;
+  border-bottom: 3px solid var(--md-gold);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.md-header-under__nav a {
+  font-family: var(--md-font-pixel);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--md-text);
+  text-shadow: 0 2px 0 var(--md-shadow);
+  text-decoration: none;
+  padding: 4px 2px;
+}
+
+.md-header-under__nav a:hover {
+  color: var(--md-gold);
+}
+
+/* Главная 01-video-chests */
+.md-hero-video {
+  padding: 0 0 16px;
+}
+
+.md-hero-video__center {
+  display: grid;
+  justify-items: center;
+  padding: 8px 0 14px;
+  gap: 14px;
+}
+
+.md-hero-video__media {
+  position: relative;
+  width: min(320px, 78vw);
+}
+
+.md-hero-video__frame {
+  aspect-ratio: 3 / 4;
+  background: #000;
+  border: 4px solid rgba(0, 0, 0, 0.82);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 6px rgba(0, 0, 0, 0.28);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.md-hero-video__frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.md-hero-video__peek {
+  position: absolute;
+  width: 122px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.35));
+}
+
+.md-hero-video__peek--left {
+  left: -56px;
+  bottom: -22px;
+  transform: rotate(-10deg);
+}
+
+.md-hero-video__peek--right {
+  right: -56px;
+  bottom: -18px;
+  transform: rotate(10deg);
+}
+
+.md-hero-video__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.md-hero-video__actions .md-btn {
+  min-width: 240px;
+  padding: 16px 30px;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  gap: 14px;
+}
+
+.md-hero-video__actions .md-btn__icon {
+  width: 42px;
+  height: 42px;
+}
+
+/* Промо 04-stats-row */
+.md-promo-stats {
+  padding: 8px 0 18px;
+}
+
+.md-promo-stats__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.md-promo-stats__item {
+  background: var(--md-panel);
+  border: 3px solid var(--md-panel-border);
+  box-shadow: inset 0 0 0 2px var(--md-panel-inset);
+  padding: 14px 10px;
+  text-align: center;
+  display: grid;
+  gap: 6px;
+}
+
+.md-promo-stats__val {
+  font-family: var(--md-font-pixel);
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--md-gold);
+  text-shadow: 0 3px 0 var(--md-shadow);
+  text-transform: uppercase;
+}
+
+.md-promo-stats__label {
+  font-size: 12px;
+  color: var(--md-text-soft);
+  text-transform: lowercase;
+}
+
+/* О игре 02-gold-title */
+.md-about-gold {
+  padding: 20px 0 24px;
+}
+
+.md-mc--section {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 16px;
+}
+
+.md-about-gold__body {
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--md-text-soft);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Бонусы 02-gold-cards */
+.md-bonus-cards {
+  padding: 16px 0 24px;
+}
+
+.md-bonus-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.md-bonus-cards__card {
+  background: var(--md-panel);
+  border: 3px solid var(--md-panel-border);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 2px var(--md-panel-inset);
+  padding: 16px 14px;
+  text-align: center;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.md-bonus-cards__card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.4));
+}
+
+.md-bonus-cards__card h3 {
+  margin: 0;
+  font-family: var(--md-font-pixel);
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--md-gold);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.55);
+}
+
+.md-bonus-cards__card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--md-text-soft);
+}
+
+/* Как играть 02-numbered */
+.md-how-num {
+  padding: 16px 0 24px;
+}
+
+.md-how-num__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.md-how-num__list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--md-panel);
+  border: 3px solid var(--md-panel-border);
+  box-shadow: inset 0 0 0 2px var(--md-panel-inset);
+  padding: 12px 14px;
+  font-size: 15px;
+  color: var(--md-text-soft);
+}
+
+.md-how-num__n {
+  flex: 0 0 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-family: var(--md-font-pixel);
+  background: var(--md-btn);
+  color: #1a0f0a;
+  border: 2px solid rgba(0, 0, 0, 0.55);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* FAQ 03-open-list */
+.md-faq-open {
+  padding: 10px 0 18px;
+}
+
+.md-faq-open__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  counter-reset: faq;
+}
+
+.md-faq-open__list li {
+  counter-increment: faq;
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px 12px 48px;
+  position: relative;
+  background: var(--md-panel);
+  border: 3px solid var(--md-panel-border);
+  box-shadow: inset 0 0 0 2px var(--md-panel-inset);
+}
+
+.md-faq-open__list li::before {
+  content: counter(faq);
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  font-family: var(--md-font-pixel);
+  font-size: 12px;
+  background: var(--md-btn);
+  color: #1a0f0a;
+  border: 2px solid var(--md-stroke);
+}
+
+.md-faq-open__list strong {
+  font-family: var(--md-font-pixel);
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--md-gold);
+  text-shadow: 0 2px 0 var(--md-shadow);
+}
+
+.md-faq-open__list span {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--md-text-soft);
+}
+
+/* Подвал 01-panel-center */
+.md-footer-panel {
+  padding: 16px 0 22px;
+}
+
+.md-footer-panel__inner {
+  text-align: center;
+  font-family: var(--md-font-pixel);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.55);
+}
+
+.md-footer-panel__rule {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.22);
+  margin: 10px auto;
+  width: min(620px, 100%);
+}
+
+@media (max-width: 760px) {
+  .md-hero-video__peek {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .md-bonus-cards__grid,
+  .md-promo-stats__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* VPN блок */
+.md-vpn {
+  padding: 18px 0 24px;
+}
+
+.md-vpn__inner {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.md-vpn__badge {
+  display: inline-block;
+  padding: 6px 22px;
+  font-family: var(--md-font-pixel);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: #1a1a1a;
+  border: 3px solid #000;
+  box-shadow:
+    0 4px 0 rgba(0, 0, 0, 0.55),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.md-vpn__title {
+  font-size: clamp(24px, 3.4vw, 34px);
+}
+
+.md-vpn__title-fill {
+  background: linear-gradient(180deg, #ffffff 0%, #d7d7d7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.md-vpn__btn {
+  min-width: 260px;
+  padding: 14px 28px;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+}
